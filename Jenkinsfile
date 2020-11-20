@@ -6,13 +6,15 @@ pipeline {
     }
     stages {
         stage('1') {
+		print env.BRANCH_NAME
             steps {
 		    echo 'Hello World ${params.branch}'
 		    echo 'Hello World env.BRANCH_NAME'
-		    print  env.BRANCH_NAME
+		    echo  env.BRANCH_NAME
             }
         }
         stage('2  develop') {
+		
             when {
                 branch 'develop'
             }
