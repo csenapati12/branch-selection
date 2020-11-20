@@ -1,9 +1,13 @@
 pipeline {
     agent any
+	 environment {
+        branch = env.BRANCH_NAME
+      
+    }
     stages {
         stage('1') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World $branch'
             }
         }
         stage('2  develop') {
