@@ -1,7 +1,8 @@
 pipeline{
- agent any
+ 
 stages{
    stage("develop"){
+	   agent any
 	   when{ branch 'develop' }    
     steps{
 	  print "develop"
@@ -9,6 +10,7 @@ stages{
     }
      
    stage("master"){
+	   agent any
 	  when{ branch 'master' }
         steps{
 	  print "master"
