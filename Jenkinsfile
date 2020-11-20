@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('1') {
             steps {
-                echo 'Hello World $branch'
+		    echo 'Hello World ${branch}'
             }
         }
         stage('2  develop') {
