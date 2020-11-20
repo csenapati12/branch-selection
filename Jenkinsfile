@@ -1,5 +1,6 @@
 pipeline{
  agent any
+  print env.BRANCH_NAME	
    stages{
    stage("develop"){
 	   when{
