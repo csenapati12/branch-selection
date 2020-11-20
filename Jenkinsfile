@@ -14,14 +14,14 @@ pipeline{
    }
      
    stage("master"){
-	   when{
-	   expression {
-        return env.BRANCH_NAME == 'master';
-        }
-	   }}
-    steps{
-	  print "master"
-	}
-   }
+		when{
+		   expression {
+		return env.BRANCH_NAME == 'master';
+		}
+		   }
+	    steps{
+		  print "master"
+		}
+	   }
   }
 }
