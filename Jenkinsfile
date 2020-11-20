@@ -8,6 +8,8 @@ pipeline {
         stage('1') {
             steps {
 		    echo 'Hello World ${params.branch}'
+		    echo 'Hello World env.BRANCH_NAME'
+		    print  env.BRANCH_NAME
             }
         }
         stage('2  develop') {
