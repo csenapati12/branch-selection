@@ -1,6 +1,6 @@
 pipeline{
  agent any
-	print ${BRANCH_NAME}
+	print "${BRANCH_NAME}"
    stages{
    stage("develop"){
 	   when{
