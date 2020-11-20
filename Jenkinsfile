@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('1) {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Example develop') {
+        stage('2  develop') {
             when {
                 branch 'develop'
             }
@@ -14,7 +14,7 @@ pipeline {
                 echo 'develop'
             }
         }
- stage('Example master') {
+ stage('3 master') {
             when {
                 branch 'master'
             }
