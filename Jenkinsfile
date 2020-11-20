@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	 environment {
-        branch = env.BRANCH_NAME
+        branch = 'env.BRANCH_NAME'
       
     }
     stages {
