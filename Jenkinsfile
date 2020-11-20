@@ -4,7 +4,7 @@ pipeline{
    stage("develop"){
 	   when{
 	   expression {
-        return env.BRANCH_NAME != 'develop';
+        return env.BRANCH_NAME == 'develop';
         }
 	   }
     
