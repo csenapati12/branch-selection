@@ -18,7 +18,7 @@ pipeline{
 	   expression {
         return env.BRANCH_NAME == 'master';
         }
-	   }}
+	   }
     steps{
 	  print "master"
 	}
