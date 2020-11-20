@@ -7,7 +7,7 @@ pipeline{
         return env.BRANCH_NAME != 'develop';
         }
 	   }
-    }
+    
     steps{
 	  print "develop"
 	}
