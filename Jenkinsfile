@@ -1,27 +1,38 @@
-pipeline{
- agent any
-   stages{
-   stage("develop"){
-	   when{
-	   expression {
-        return env.BRANCH_NAME == 'develop';
+pipeline {
+    agent any
+	 environment {
+        branch = 'env.BRANCH_NAME'
+      
+    }
+    stages {
+        stage('1') {
+		
+            steps {
+		    echo 'Hello World ${params.branch}'
+		    echo 'Hello World env.BRANCH_NAME'
+		    echo  env.BRANCH_NAME
+		    
+		    echo  "${env.BRANCH_NAME}"
+		    echo  '${env.BRANCH_NAME}'
+            }
         }
-	   }
-    
-    steps{
-	  print "develop"
-	}
-   }
-     
-   stage("master"){
-		when{
-		   expression {
-		return env.BRANCH_NAME == 'master';
-		}
-		   }
-	    steps{
-		  print "master"
-		}
-	   }
-  }
+        stage('2  develop') {
+		
+            when {
+                branch 'develop'
+            }
+            steps {
+                echo 'develop'
+            }
+        }
+ stage('3 master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'master'
+            }
+        }	    
+	    
+    }
 }
