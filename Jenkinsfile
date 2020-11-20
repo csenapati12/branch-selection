@@ -11,7 +11,7 @@ pipeline {
 		    echo 'Hello World ${params.branch}'
 		    echo 'Hello World env.BRANCH_NAME'
 		    echo  env.BRANCH_NAME
-		    echo  ${env.BRANCH_NAME}
+		    
 		    echo  "${env.BRANCH_NAME}"
 		    echo  '${env.BRANCH_NAME}'
             }
