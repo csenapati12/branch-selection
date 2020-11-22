@@ -12,7 +12,7 @@ pipeline {
 		    echo  env.BRANCH_NAME		    
 		    echo  "${env.BRANCH_NAME}"
 	            tag ="336"
-	            echo "Test********** ${env.BRANCH_NAME}.${tage} ????????????"
+	            echo "Test********** ${env.BRANCH_NAME}.${tag} ????????????"
 		    }
             }
         }
