@@ -8,12 +8,11 @@ pipeline {
         stage('1') {
 		
             steps {
-		    echo 'Hello World ${params.branch}'
-		    echo 'Hello World env.BRANCH_NAME'
-		    echo  env.BRANCH_NAME
 		    
+		    echo  env.BRANCH_NAME		    
 		    echo  "${env.BRANCH_NAME}"
-		    echo  '${env.BRANCH_NAME}'
+		    echo "Test********** ${env.BRANCH_NAME} ?????????  ${BUILDS_ALL_TIME}"
+		    
             }
         }
         stage('2  develop') {
@@ -22,7 +21,9 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                echo 'develop'
+              tag = VersionNumber(projectStartDate: '2017-05-22', versionNumberString: 'develop.1.0.v${BUILDS_ALL_TIME}', versionPrefix:'',  worstResultForIncrement:'SUCCESS')
+              echo "${tag}"
+		    echo "Test********** ${env.BRANCH_NAME} ?????????  ${env.BRANCH_NAME}"
             }
         }
  stage('3 master') {
