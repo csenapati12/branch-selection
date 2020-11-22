@@ -12,7 +12,8 @@ pipeline {
 		    echo  env.BRANCH_NAME		    
 		    echo  "${env.BRANCH_NAME}"
 	            tag ="336"
-	            echo 'Test********** ${env.BRANCH_NAME}.${tag} ????????????'
+	            tag1= 'Test********** env.BRANCH_NAME.$tag ????????????'
+			    echo "${tag}"
 		    }
             }
         }
