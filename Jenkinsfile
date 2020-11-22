@@ -11,7 +11,7 @@ pipeline {
 		    script{
 		    echo  env.BRANCH_NAME		    
 		    echo  "${env.BRANCH_NAME}"
-		    echo "Test********** ${env.BRANCH_NAME} ?????????  ${BUILDS_ALL_TIME}"
+		    echo "Test********** ${env.BRANCH_NAME} ?????????  "
 		    }
             }
         }
