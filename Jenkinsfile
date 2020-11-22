@@ -8,21 +8,26 @@ pipeline {
         stage('1') {
 		
             steps {
-		    echo 'Hello World ${params.branch}'
-		    echo 'Hello World env.BRANCH_NAME'
-		    echo  env.BRANCH_NAME
-		    
+		    script{
+		    echo  env.BRANCH_NAME		    
 		    echo  "${env.BRANCH_NAME}"
-		    echo  '${env.BRANCH_NAME}'
+	            tag ="336"
+	            echo "Test********** ${env.BRANCH_NAME}.${tag} ????????????"
+		    }
             }
         }
         stage('2  develop') {
 		
             when {
-                branch 'develop'
+                branch 'master'
             }
-            steps {
-                echo 'develop'
+           steps {
+		    script{
+		    echo  env.BRANCH_NAME		    
+		    echo  "${env.BRANCH_NAME}"
+	            tag ="336master"
+	            echo "Test********** ${env.BRANCH_NAME}.${tag} ????????????"
+		    }
             }
         }
  stage('3 master') {
